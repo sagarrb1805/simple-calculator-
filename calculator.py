@@ -117,47 +117,44 @@ def press_clear():
     display_label.config(text=display_val, anchor='e')
 
 
-btn_7 = Button(root, text='7', width=6, height=3, font=("monaco", 15, "bold"), command=press_7)
-btn_7.place(x=20, y=120)
-btn_8 = Button(root, text='8', width=6, height=3, font=("monaco", 15, "bold"), command=press_8)
-btn_8.place(x=140, y=120)
-btn_9 = Button(root, text='9', width=6, height=3, font=("monaco", 15, "bold"), command=press_9)
-btn_9.place(x=260, y=120)
-btn_plus = Button(root, text='+', width=6, height=3, font=("monaco", 15, "bold"), command=press_plus)
-btn_plus.place(x=380, y=120)
+class ButtonsCreate:
+    def __init__(self, x, y, text, command, width=6, height=3):
+        Button(root, text=text, width=width, height=height, font=('monaco', 15, 'bold'), command=command).place(x=x, y=y)
 
 
-btn_4 = Button(root, text='4', width=6, height=3, font=("monaco", 15, "bold"), command=press_4)
-btn_4.place(x=20, y=220)
-btn_5 = Button(root, text='5', width=6, height=3, font=("monaco", 15, "bold"), command=press_5)
-btn_5.place(x=140, y=220)
-btn_6 = Button(root, text='6', width=6, height=3, font=("monaco", 15, "bold"), command=press_6)
-btn_6.place(x=260, y=220)
-btn_min = Button(root, text='-', width=6, height=3, font=("monaco", 15, "bold"), command=press_min)
-btn_min.place(x=380, y=220)
+btn_7 = ButtonsCreate(20, 120, '7', press_7)
 
+btn_8 = ButtonsCreate(140, 120, '8', press_8)
 
-btn_1 = Button(root, text='1', width=6, height=3, font=("monaco", 15, "bold"), command=press_1)
-btn_1.place(x=20, y=320)
-btn_2 = Button(root, text='2', width=6, height=3, font=("monaco", 15, "bold"), command=press_2)
-btn_2.place(x=140, y=320)
-btn_3 = Button(root, text='3', width=6, height=3, font=("monaco", 15, "bold"), command=press_3)
-btn_3.place(x=260, y=320)
-btn_dot = Button(root, text='.', width=6, height=3, font=("monaco", 15, "bold"), command=press_dot)
-btn_dot.place(x=380, y=320)
+btn_9 = ButtonsCreate(260, 120, '9', press_9)
 
+btn_plus = ButtonsCreate(380, 120, '+', press_plus)
 
-btn_mul = Button(root, text='x', width=6, height=3, font=("monaco", 15, "bold"), command=press_mul)
-btn_mul.place(x=20, y=420)
-btn_0 = Button(root, text='0', width=6, height=3, font=("monaco", 15, "bold"), command=press_0)
-btn_0.place(x=140, y=420)
-btn_div = Button(root, text='/', width=6, height=3, font=("monaco", 15, "bold"), command=press_div)
-btn_div.place(x=260, y=420)
-btn_equal = Button(root, text='=', width=6, height=3, font=("monaco", 15, "bold"), command=press_equal)
-btn_equal.place(x=380, y=420)
+btn_4 = ButtonsCreate(20, 220, '4', press_4)
 
-btn_clear = Button(root, text='C', width=42, height=2, font=("monaco", 15, "bold"), command=press_clear)
-btn_clear.place(x=20, y=493)
+btn_5 = ButtonsCreate(140, 220, '5', press_5)
+
+btn_6 = ButtonsCreate(260, 220, '6', press_6)
+
+btn_min = ButtonsCreate(380, 220, '-', press_min)
+
+btn_1 = ButtonsCreate(20, 320, '1', press_1)
+
+btn_2 = ButtonsCreate(140, 320, '2', press_2)
+
+btn_3 = ButtonsCreate(260, 320, '3', press_3)
+
+btn_dot = ButtonsCreate(380, 320, '.', press_dot)
+
+btn_mul = ButtonsCreate(20, 420, 'x', press_mul)
+
+btn_0 = ButtonsCreate(140, 420, '0', press_0)
+
+btn_div = ButtonsCreate(260, 420, '/', press_div)
+
+btn_equal = ButtonsCreate(380, 420, '=', press_equal)
+
+btn_clear = ButtonsCreate(20, 493, 'C', press_clear, width=42, height=2)
 
 
 root.mainloop()
